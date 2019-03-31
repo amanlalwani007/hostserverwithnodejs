@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GroupChatActivity">
+
+    <include
+        android:id="@+id/group_chat_bar_layout"
+        layout="@layout/app_bar">
+
+    </include>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/group_chat_recycle_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/myLinearLayout"
+        android:layout_below="@id/group_chat_bar_layout"
+        android:layout_alignParentStart="true"
+         />
+
+
+
+    <LinearLayout
+        android:id="@+id/myLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="horizontal"
+        android:minHeight="48dp"
+        >
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#dfdfdf"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/input_group_message"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <EditText
+            android:id="@+id/input_group_message"
+            android:hint="Enter message"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:maxLines="6"/>
+
+        <ImageButton
+            android:id="@+id/send_message_button"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:gravity="center"
+            android:layout_gravity="bottom"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
